@@ -1,8 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'bitwiseman/training'
-      args '-u root -v /home/jenkins'
+      image 'bitwiseman/training-blueocean-sample'
+      args '-u root -v $HOME/.m2:/root/.m2'
     }
     
   }
