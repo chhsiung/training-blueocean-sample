@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'bitwiseman/training'
+      args '-u root -v /home/jenkins'
+    }
+    
+  }
   stages {
     stage('error') {
       steps {
-        echo 'hello jenkins'
         sh './jenkins/build.sh'
       }
     }
